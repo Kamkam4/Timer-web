@@ -1,0 +1,212 @@
+.timer-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+  width: 100%;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+.timer-title {
+  font-size: 2.5rem;
+  font-weight: 600;
+  color: #f0f0f0;
+  margin-bottom: 40px;
+}
+
+.time-display,
+.time-inputs {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+.time-box {
+  background-color: #1a4a43;
+  padding: 30px 50px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.time-box span {
+  font-size: 4rem;
+  font-weight: 700;
+  display: block;
+}
+
+.time-box label {
+  font-size: 1rem;
+  color: #a0a0a0;
+  margin-top: 10px;
+}
+
+.controls {
+  display: flex;
+  gap: 20px;
+  width: 100%;
+  justify-content: center;
+}
+
+.controls button {
+  padding: 15px 60px;
+  border: none;
+  border-radius: 50px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.2s, opacity 0.2s;
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  min-width: 200px;
+}
+
+.controls button:hover {
+  opacity: 0.9;
+}
+
+.controls button:active {
+  transform: scale(0.98);
+}
+
+.start-btn {
+  background-color: #32d6a5;
+  color: #0d2e28;
+}
+
+.reset-btn {
+  background-color: #1a4a43;
+  color: #f0f0f0;
+}
+
+.time-inputs {
+  background-color: #1a4a43;
+  padding: 20px 40px;
+  border-radius: 10px;
+}
+
+.time-inputs input {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 4rem;
+  font-weight: 700;
+  width: 120px;
+  text-align: center;
+  font-family: inherit;
+}
+
+.time-inputs input:focus {
+  outline: none;
+}
+
+.time-inputs input::-webkit-outer-spin-button,
+.time-inputs input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.time-inputs input[type=number] {
+  -moz-appearance: textfield;
+}
+
+.time-inputs span {
+  font-size: 4rem;
+  font-weight: 700;
+  color: #a0a0a0;
+  line-height: 1;
+}
+
+.animation-wrapper {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 40px;
+  min-height: 145px;
+}
+
+.time-inputs-wrapper,
+.time-display-wrapper {
+  position: absolute;
+}
+
+.fade-enter {
+  opacity: 0;
+  transform: scale(0.95);
+}
+.fade-enter-active {
+  opacity: 1;
+  transform: scale(1);
+  transition: opacity 300ms ease-out, transform 300ms ease-out;
+}
+
+.fade-exit {
+  opacity: 1;
+  transform: scale(1);
+}
+.fade-exit-active {
+  opacity: 0;
+  transform: scale(0.95);
+  transition: opacity 300ms ease-in, transform 300ms ease-in;
+}
+
+
+/* --- რესპონსიული დიზაინი (პლანშეტები) --- */
+@media (max-width: 768px) {
+  .time-box,
+  .time-inputs {
+    padding: 15px;
+    gap: 10px;
+  }
+
+  .time-box span,
+  .time-inputs input,
+  .time-inputs span {
+    font-size: 2.5rem;
+  }
+
+  .time-inputs input {
+    width: 70px;
+  }
+
+  .time-box label {
+    font-size: 0.8rem;
+  }
+
+  .controls button {
+    padding: 12px 0;
+    width: 45%;
+    min-width: 0;
+    font-size: 1rem;
+  }
+}
+
+/* --- რესპონსიული დიზაინი (მობილურები) --- */
+/* --- მობილური განლაგება: კომპაქტური, გვერდიგვერდ HH:MM:SS --- */
+/* მობილურზე ტაიმერი ცენტრში */
+@media (max-width: 600px) {
+  /* თვითონ კონტეინერი იყოს ვიწრო, ცენტრში */
+  .timer-container {
+    max-width: 520px;
+    margin-inline: auto;      /* ჰორიზონტალურად ცენტრში */
+    padding-inline: 16px;     /* მცირე გვერდითი პადინგი */
+  }
+
+  /* შიდა ბლოკებიც გასწორდეს ცენტრში */
+  .animation-wrapper,
+  .time-display,
+  .time-inputs,
+  .controls {
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: center;
+  }
+
+  /* სამივე ბოქსი უკეთ “შუაში” დაჯდეს */
+  .time-display { gap: 8px; }
+  .time-box { width: auto; }
+
+  /* სათაური ცენტრში */
+  .timer-title { text-align: center; }
+}

@@ -1,0 +1,148 @@
+.timer-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+}
+
+.timer-title {
+  font-size: 2.5rem;
+  font-weight: 500;
+  color: #f0f0f0;
+}
+
+.time-display {
+  display: flex;
+  gap: 20px;
+}
+
+.time-box {
+  background-color: #1a4a43;
+  padding: 30px 50px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.time-box span {
+  font-size: 4rem;
+  font-weight: bold;
+  display: block;
+}
+
+.time-box label {
+  font-size: 1rem;
+  color: #a0a0a0;
+  margin-top: 10px;
+}
+
+.controls {
+  display: flex;
+  gap: 20px;
+}
+
+.controls button {
+  padding: 15px 60px;
+  border: none;
+  border-radius: 50px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.2s, opacity 0.2s;
+}
+
+.controls button:hover {
+  opacity: 0.9;
+}
+
+.controls button:active {
+  transform: scale(0.98);
+}
+
+.start-btn {
+  background-color: #32d6a5;
+  color: #0d2e28;
+}
+
+.reset-btn {
+  background-color: #1a4a43;
+  color: #f0f0f0;
+}
+/* ეს კოდი დაამატეთ Timer.css ფაილის ბოლოში */
+
+.time-inputs {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background-color: #1a4a43;
+  padding: 20px 40px;
+  border-radius: 10px;
+}
+
+.time-inputs input {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 4rem;
+  font-weight: bold;
+  width: 120px;
+  text-align: center;
+  font-family: inherit;
+}
+
+.time-inputs input:focus {
+  outline: none;
+}
+
+/* ბრაუზერის მიერ დამატებული ისრების დამალვა */
+.time-inputs input::-webkit-outer-spin-button,
+.time-inputs input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.time-inputs span {
+  font-size: 4rem;
+  font-weight: bold;
+  color: #a0a0a0;
+  line-height: 1;
+}
+/* --- ანიმაციისთვის საჭირო სტილები --- */
+
+/* კონტეინერი, რომელიც უზრუნველყოფს, რომ კომპონენტები ერთმანეთზე გადავიდეს */
+.animation-wrapper {
+  position: relative;
+  height: 140px; /* მიახლოებითი სიმაღლე, რომ გვერდმა არ იხტუნაოს */
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.time-inputs-wrapper,
+.time-display-wrapper {
+  position: absolute; /* აუცილებელია, რომ ანიმაცია კორექტულად იმუშაოს */
+}
+
+/* Fade ანიმაციის კლასები */
+
+/* 1. კომპონენტის გამოჩენის ანიმაცია */
+.fade-enter {
+  opacity: 0;
+  transform: scale(0.95);
+}
+.fade-enter-active {
+  opacity: 1;
+  transform: scale(1);
+  transition: opacity 300ms ease-out, transform 300ms ease-out;
+}
+
+/* 2. კომპონენტის გაქრობის ანიმაცია */
+.fade-exit {
+  opacity: 1;
+  transform: scale(1);
+}
+.fade-exit-active {
+  opacity: 0;
+  transform: scale(0.95);
+  transition: opacity 300ms ease-in, transform 300ms ease-in;
+}

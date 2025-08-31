@@ -1,0 +1,136 @@
+.presets-container {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px 40px;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.presets-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+.presets-header h1 {
+  font-size: 2.5rem;
+  font-weight: 600;
+}
+
+.preset-category {
+  margin-bottom: 40px;
+}
+
+.preset-category h2 {
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: #a0a0a0;
+  margin-bottom: 20px;
+}
+
+.presets-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.preset-card {
+  background-color: #1a4a43;
+  padding: 25px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  font-size: 1.1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: transform 0.2s, background-color 0.2s;
+}
+
+.preset-card:hover {
+  transform: translateY(-5px);
+  background-color: #215c53;
+}
+
+.preset-card svg {
+  font-size: 1.5rem;
+  opacity: 0.8;
+}
+.preset-card {
+  background-color: #1a4a43;
+  padding: 25px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  font-size: 1.1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: transform 0.2s, background-color 0.2s;
+  /* დაამატეთ ეს ორი ხაზი 👇 */
+  color: white;
+  text-decoration: none;
+}
+/* --- მოდალური ფანჯრის ღილაკის სტილი --- */
+.modal-button {
+  background-color: #32d6a5; /* ღია მწვანე, როგორც Start ღილაკი */
+  color: #0d2e28; /* მუქი მწვანე ტექსტი */
+  border: none;
+  border-radius: 50px; /* სრულად მომრგვალებული */
+  padding: 12px 50px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.2s, opacity 0.2s;
+}
+
+.modal-button:hover {
+  opacity: 0.9;
+}
+
+.modal-button:active {
+  transform: scale(0.98);
+}
+/* --- რესპონსიული დიზაინი --- */
+/* --- რესპონსიული დიზაინი --- */
+@media (max-width: 768px) {
+  .presets-container {
+    padding: 15px 20px;
+  }
+
+  .presets-header h1 {
+    font-size: 2rem;
+  }
+  
+  .presets-grid {
+    /* ვამცირებთ ბარათის მინიმალურ სიგანეს, რომ უკეთ ჩაეტიოს */
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 15px;
+  }
+
+  .preset-card {
+    padding: 20px;
+    font-size: 1rem;
+  }
+}
+/* --- მოდალური ფანჯრის ღილაკის სტილი --- */
+.modal-button {
+  background-color: #32d6a5; /* ღია მწვანე, როგორც Start ღილაკი */
+  color: #0d2e28; /* მუქი მწვანე ტექსტი */
+  border: none;
+  border-radius: 50px; /* სრულად მომრგვალებული */
+  padding: 12px 50px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.2s, opacity 0.2s;
+  
+  /* დაამატეთ ეს ხაზი 👇 */
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+}

@@ -1,0 +1,45 @@
+/* --- 1. თქვენი ფონტის განსაზღვრა --- */
+@font-face {
+  font-family: 'MyCustomFont';
+  src: url('./assets/fonts/BPG_110_Mod_Caps.ttf') format('truetype');
+  font-weight: 400; /* Regular */
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'MyCustomFont';
+  src: url('./assets/fonts/BPG_110_Mod.ttf') format('truetype');
+  font-weight: 700; /* Bold */
+  font-style: normal;
+}
+
+/* --- 2. გლობალური სტილები და ფონტის გამოყენება --- */
+:root {
+  /* 👇 აქ ვიყენებთ თქვენს მიერ განსაზღვრულ ფონტს */
+  font-family: 'MyCustomFont', sans-serif;
+  
+  line-height: 1.5;
+  font-weight: 400; /* დეფოლტ სისქე იქნება Regular */
+  color-scheme: light dark;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+  background-color: #0d2e28;
+  color: rgba(255, 255, 255, 0.87);
+}
+
+#root {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  text-align: center;
+}

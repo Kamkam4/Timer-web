@@ -1,0 +1,121 @@
+/* --- მთავარი კონტეინერი --- */
+.app-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  width: 100%;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* --- ლოგო --- */
+.logo a {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: bold;
+  font-size: 1.2rem;
+  color: white;
+  text-decoration: none;
+}
+
+/* --- მომხმარებლის კონტროლის ბლოკი (მარჯვნივ) --- */
+.user-controls {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+/* --- პარამეტრების ანიმაციური მენიუ --- */
+.inline-menu {
+  max-width: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: max-width 0.4s ease-in-out, opacity 0.3s ease-in-out;
+  display: flex;
+  align-items: center;
+}
+
+.inline-menu.open {
+  max-width: 500px;
+  opacity: 1;
+}
+
+.inline-menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  gap: 25px;
+  white-space: nowrap;
+  margin-right: 15px;
+}
+
+.inline-menu li a {
+  color: #a0a0a0;
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+.inline-menu li a:hover {
+  color: #ffffff;
+}
+
+.inline-menu li a.active {
+  color: #ffffff;
+  font-weight: 600;
+}
+
+/* --- პარამეტრების ღილაკი --- */
+.settings-btn {
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  opacity: 0.8;
+  transition: opacity 0.2s;
+  display: flex;
+  align-items: center;
+}
+
+.settings-btn:hover {
+  opacity: 1;
+}
+
+.settings-btn:focus {
+  outline: none;
+}
+/* ავატარის სტილი წაშლილია */
+/* --- რესპონსიული დიზაინი --- */
+/* --- რესპონსიული დიზაინი --- */
+@media (max-width: 768px) {
+  .app-header {
+    padding: 15px 20px;
+  }
+
+  /* ვმალავთ ლოგოს ტექსტს პატარა ეკრანზე */
+  .logo a {
+    font-size: 0; /* ტექსტის დამალვა */
+  }
+
+  .logo a::before {
+    content: "TM"; /* ან შეგიძლიათ დატოვოთ მხოლოდ იკონა */
+    font-size: 1.2rem;
+    font-weight: 600;
+  }
+
+  .user-controls {
+    gap: 10px;
+  }
+
+  .inline-menu ul {
+    gap: 15px;
+    margin-right: 10px;
+  }
+  
+  .inline-menu li a {
+    font-size: 0.9rem;
+  }
+}
